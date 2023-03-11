@@ -2,13 +2,13 @@ package ocp;
 
 public abstract class Pokemon {
     private String name;
-    private int level;
-    private int hp;
+    protected int level;
+    protected int hp;
 
-    public Pokemon(String name, int level) {
+    public Pokemon(String name, int level, int hp) {
         this.name = name;
         this.level = level;
-        this.hp = 100;
+        this.hp = hp;
     }
 
     public String getName() {
@@ -35,15 +35,9 @@ public abstract class Pokemon {
         this.hp = hp;
     }
 
-    // SRP 위배, 다른 클래스들로 분리함
-    public void attack(String opponent){
-        System.out.println(opponent + "를(을) 기본 공격합니다!");
-    }
-    public void evolve(){
-        level++;
-        hp += 10;
-        System.out.println(name + "이(가) " + level + "로 UP!");
-    }
+    public abstract void attack();
+
+    public abstract void evolve();
 
     // 기능을 추가적으로 넣을 수 있다
 }
