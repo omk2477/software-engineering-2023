@@ -7,25 +7,14 @@ public interface Pokemon {
     void swim();
 }
 
-class Pikachu implements Pokemon {
-// ISP 위배
+class Pikachu implements AttackablePokemon {
     @Override
     public void attack() {
-
+        System.out.println("100만볼트 공격 성공!");
     }
 
     @Override
     public void defend() {
-
-    }
-
-    @Override
-    public void fly() {
-
-    }
-
-    @Override
-    public void swim() {
-
+        System.out.println("방어 성공");
     }
 }
