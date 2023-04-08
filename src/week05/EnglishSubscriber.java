@@ -3,17 +3,17 @@ package week05;
 public class EnglishSubscriber implements Subscriber{
     private String name;
     private int value;
-    private LandCh landCh;
+    private Subject subject;
 
-    public EnglishSubscriber(String name, LandCh landCh) {
+    public EnglishSubscriber(String name, Subject subject) {
         this.name = name;
-        this.landCh = landCh;
-        landCh.registerSubscriber(this);
+        this.subject = subject;
+        subject.registerSubscriber(this);
     }
 
     @Override
     public void update() {
-        this.value = landCh.getPrice();
+        this.value = subject.getPrice();
         System.out.println("Ms/Msrs." + this.name + ", the price has been changed to " + this.value + "won.");
     }
 }

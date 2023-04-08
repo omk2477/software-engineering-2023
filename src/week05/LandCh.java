@@ -21,6 +21,7 @@ public class LandCh implements Subject{
         subscribers.remove(subscriber);
     }
 
+    @Override
     public int getPrice() {
         return this.price;
     }

@@ -3,17 +3,17 @@ package week05;
 public class KoreanSubscriber implements Subscriber{
     private String name;
     private int value;
-    private LandCh landCh;
+    private Subject subject;
 
-    public KoreanSubscriber(String name, LandCh landCh) {
+    public KoreanSubscriber(String name, Subject subject) {
         this.name = name;
-        this.landCh = landCh;
-        landCh.registerSubscriber(this);
+        this.subject = subject;
+        subject.registerSubscriber(this);
     }
 
     @Override
     public void update() {
-        this.value = landCh.getPrice();
+        this.value = subject.getPrice();
         System.out.println(this.name + "님 가격이 " + this.value + "원으로 변경되었습니다.");
     }
 }
